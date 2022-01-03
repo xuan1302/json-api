@@ -1,0 +1,57 @@
+@baseUrl = http://localhost:300/api
+
+@resourceName = products
+#Categories
+
+# @name getAll
+GET {{baseUrl}}/{{resourceName}}
+
+###
+
+# @name filterProducts
+GET {{baseUrl}}/{{resourceName}}?color=magenta&price_gte=300
+
+
+###
+ 
+# @name filterProducts
+GET {{baseUrl}}/{{resourceName}}?name_like=cyan
+
+
+###
+# @name pagination
+GET {{baseUrl}}/{{resourceName}}?_page=1&_limit=2
+
+###
+# @name sort
+GET {{baseUrl}}/{{resourceName}}?_sort=price&_order=desc
+
+###
+# @name addNew
+POST {{baseUrl}}/{{resourceName}}
+Content-Type: application/json
+
+  {
+    "categoryId": "dddc5b86-661e-40bd-b8c8-6416b56ca846",
+    "name": "Intelligent Frozen Soap",
+    "color": "mint green",
+    "price": 414,
+    "description": "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
+    "thumbnail": "http://placeimg.com/400/400"
+  }
+
+###
+
+# @name update
+
+PATCH {{baseUrl}}/{{resourceName}}/OXk0UJq
+Content-Type: application/json
+
+  {
+    "price": 96
+  }
+
+###
+
+# @name remove
+DELETE {{baseUrl}}/{{resourceName}}/2
