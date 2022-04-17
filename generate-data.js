@@ -37,7 +37,7 @@ const randomProductList = (categotyList, numberOfProduct) => {
                 id: faker.random.uuid(),
                 name: faker.commerce.productName(),
                 color: faker.commerce.color(),
-                price: Number.parseFloat(faker.commerce.price()),
+                price: Number.parseFloat(faker.commerce.price(10000, 45000)),
                 description: faker.commerce.productDescription(),
                 createdAt: Date.now(),
                 updatedAt: Date.now(),
@@ -53,7 +53,7 @@ const randomProductList = (categotyList, numberOfProduct) => {
 (() => {
     //random data
     const categotyList = randomCategoryList(5);
-    const productList = randomProductList(categotyList, 5);
+    const productList = randomProductList(categotyList, 100);
     const db = {
         categories: categotyList,
         products: productList,
