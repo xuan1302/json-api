@@ -53,7 +53,7 @@ const randomProductList = (categotyList, numberOfProduct) => {
 (() => {
     //random data
     const categotyList = randomCategoryList(5);
-    const productList = randomProductList(categotyList, 100);
+    const productList = randomProductList(categotyList, 50);
     const db = {
         categories: categotyList,
         products: productList,
